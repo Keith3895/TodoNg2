@@ -1,0 +1,23 @@
+<mat-toolbar fxLayout="row" color='primary'>
+  <mat-toolbar-row >
+    <span >Custom Toolbar</span>
+    <div fxHide [fxHide.gt-xs]="isVisibleOnDesktop()">
+        <button mat-button color="secondary">projects</button>
+        <button mat-button color="secondary">Tasks</button>
+        <button mat-button color="secondary">Conversations</button>
+    </div>
+    <button fxHide fxShow.xs='true' mat-button color="secondary" (click)="sidenav.toggle()">Open sidenav</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill class="side-container">
+  <mat-sidenav #sidenav class="sidenav" align='end' >
+    <div fxLayout="column">
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="primary">Primary</button>
+    </div>
+  </mat-sidenav>
+  <app-dashboard></app-dashboard>
+</mat-sidenav-container>
+
+
