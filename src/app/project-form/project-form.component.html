@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="example-container">
+  <mat-form-field>
+    <input formControlName="name" matInput placeholder="Project Title">
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="DueDate" matInput [matDatepicker]="picker" placeholder="Choose a date" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</form>
